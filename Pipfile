@@ -11,6 +11,7 @@ lxml = "*"
 fastapi = "*"
 uvicorn = "*"
 pymongo = "*"
+sqlalchemy = "*"
 
 [dev-packages]
 

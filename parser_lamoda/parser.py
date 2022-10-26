@@ -1,5 +1,6 @@
 import requests
 import bs4
+from py_mongo.models.clothe import Clothes
 
 
 def get_data(url):

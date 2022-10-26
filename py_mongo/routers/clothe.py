@@ -8,4 +8,5 @@ clothe = APIRouter()
 
 @clothe.get("/")
 async def find_all_clothes():
-    return clothes_entity(connaction.local.clothe.find())
+    return await clothes_entity(connaction.local.clothe.find())
+
