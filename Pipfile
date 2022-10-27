@@ -12,6 +12,7 @@ fastapi = "*"
 uvicorn = "*"
 pymongo = "*"
 sqlalchemy = "*"
+motor = "*"
 
 [dev-packages]
 

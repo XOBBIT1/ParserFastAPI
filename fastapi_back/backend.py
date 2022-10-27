@@ -1,9 +1,9 @@
 import uvicorn
 from fastapi import FastAPI
-from py_mongo.routers.clothe import clothe
+from mg_db.routers.clothe import router
 
 app = FastAPI()
-app.include_router(clothe)
+app.include_router(router)
 
 
 @app.get("/")

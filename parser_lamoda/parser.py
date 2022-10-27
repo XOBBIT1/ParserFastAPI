@@ -1,6 +1,6 @@
 import requests
 import bs4
-from py_mongo.models.clothe import Clothes
+from mg_db.commands.command import ClotheRepo
 
 
 def get_data(url):
@@ -16,12 +16,15 @@ def get_data(url):
                                            "x-product-card-description__price-WEB8507_price_no_bold")
         new_prise = clothe.find("span", class_="x-product-card-description__price-new "
                                                "x-product-card-description__price-WEB8507_price_no_bold")
-        print(
-            f'URL:{url_clothe},\nBrand_name:{brand_name.text},\n'
-            f'Product_name:{product_name.text}\n'
-            f'Prise:{new_prise.text if new_prise else prise.text}\n'
-            f'==========================================================='
-        )
+        res = {
+            "url_clothe": url_clothe,
+            "brand_name": brand_name.text,
+            "product_name": product_name.text,
+            "prise": new_prise.text if new_prise else prise.text,
+        }
+        clothe_list = ClotheRepo.insert(res)
+        print(clothe_list)
+    return res
 
 
 def main():
