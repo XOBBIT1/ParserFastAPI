@@ -13,6 +13,8 @@ uvicorn = "*"
 pymongo = "*"
 sqlalchemy = "*"
 motor = "*"
+aiohttp = "*"
+aiokafka = "*"
 
 [dev-packages]
 
